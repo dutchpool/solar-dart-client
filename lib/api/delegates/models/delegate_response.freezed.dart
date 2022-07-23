@@ -255,7 +255,9 @@ class _$_DelegateResponse implements _DelegateResponse {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DelegateResponseToJson(this);
+    return _$$_DelegateResponseToJson(
+      this,
+    );
   }
 }
 
@@ -274,25 +276,25 @@ abstract class _DelegateResponse implements DelegateResponse {
 
   @override
   @JsonKey(name: 'username')
-  String get username => throw _privateConstructorUsedError;
+  String get username;
   @override
   @JsonKey(name: 'address')
-  String get address => throw _privateConstructorUsedError;
+  String get address;
   @override
   @JsonKey(name: 'publicKey')
-  String get publicKey => throw _privateConstructorUsedError;
+  String get publicKey;
   @override
   @JsonKey(name: 'votes')
-  String get votes => throw _privateConstructorUsedError;
+  String get votes;
   @override
   @JsonKey(name: 'rank')
-  int? get rank => throw _privateConstructorUsedError;
+  int? get rank;
   @override
   @JsonKey(name: 'isResigned')
-  bool get isResigned => throw _privateConstructorUsedError;
+  bool get isResigned;
   @override
   @JsonKey(name: 'version')
-  String? get version => throw _privateConstructorUsedError;
+  String? get version;
   @override
   @JsonKey(ignore: true)
   _$$_DelegateResponseCopyWith<_$_DelegateResponse> get copyWith =>

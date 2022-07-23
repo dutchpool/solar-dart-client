@@ -164,7 +164,9 @@ class _$_TransactionAssetPaymentResponse
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TransactionAssetPaymentResponseToJson(this);
+    return _$$_TransactionAssetPaymentResponseToJson(
+      this,
+    );
   }
 }
 
@@ -180,10 +182,10 @@ abstract class _TransactionAssetPaymentResponse
 
   @override
   @JsonKey(name: 'amount')
-  String get amount => throw _privateConstructorUsedError;
+  String get amount;
   @override
   @JsonKey(name: 'recipientId')
-  String get recipientId => throw _privateConstructorUsedError;
+  String get recipientId;
   @override
   @JsonKey(ignore: true)
   _$$_TransactionAssetPaymentResponseCopyWith<

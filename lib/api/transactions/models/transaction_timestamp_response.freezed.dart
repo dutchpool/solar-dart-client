@@ -180,7 +180,9 @@ class _$_TransactionTimestampResponse implements _TransactionTimestampResponse {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TransactionTimestampResponseToJson(this);
+    return _$$_TransactionTimestampResponseToJson(
+      this,
+    );
   }
 }
 
@@ -197,13 +199,13 @@ abstract class _TransactionTimestampResponse
 
   @override
   @JsonKey(name: 'epoch')
-  int get epoch => throw _privateConstructorUsedError;
+  int get epoch;
   @override
   @JsonKey(name: 'unix')
-  int get unix => throw _privateConstructorUsedError;
+  int get unix;
   @override
   @JsonKey(name: 'human')
-  String get human => throw _privateConstructorUsedError;
+  String get human;
   @override
   @JsonKey(ignore: true)
   _$$_TransactionTimestampResponseCopyWith<_$_TransactionTimestampResponse>

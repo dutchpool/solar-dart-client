@@ -234,7 +234,9 @@ class _$_BroadcastTransactionsResponse
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_BroadcastTransactionsResponseToJson(this);
+    return _$$_BroadcastTransactionsResponseToJson(
+      this,
+    );
   }
 }
 
@@ -252,16 +254,16 @@ abstract class _BroadcastTransactionsResponse
 
   @override
   @JsonKey(name: 'accept')
-  List<String>? get accept => throw _privateConstructorUsedError;
+  List<String>? get accept;
   @override
   @JsonKey(name: 'broadcast')
-  List<String>? get broadcast => throw _privateConstructorUsedError;
+  List<String>? get broadcast;
   @override
   @JsonKey(name: 'excess')
-  List<String>? get excess => throw _privateConstructorUsedError;
+  List<String>? get excess;
   @override
   @JsonKey(name: 'invalid')
-  List<String>? get invalid => throw _privateConstructorUsedError;
+  List<String>? get invalid;
   @override
   @JsonKey(ignore: true)
   _$$_BroadcastTransactionsResponseCopyWith<_$_BroadcastTransactionsResponse>

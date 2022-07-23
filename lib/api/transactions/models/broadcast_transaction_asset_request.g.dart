@@ -9,9 +9,9 @@ part of 'broadcast_transaction_asset_request.dart';
 _$_BroadcastTransactionAssetRequest
     _$$_BroadcastTransactionAssetRequestFromJson(Map<String, dynamic> json) =>
         _$_BroadcastTransactionAssetRequest(
-          votes: (json['votes'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toList(),
+          votes: (json['votes'] as Map<String, dynamic>?)?.map(
+            (k, e) => MapEntry(k, (e as num).toDouble()),
+          ),
         );
 
 Map<String, dynamic> _$$_BroadcastTransactionAssetRequestToJson(

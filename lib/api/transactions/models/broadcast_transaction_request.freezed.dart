@@ -35,10 +35,10 @@ mixin _$BroadcastTransactionRequest {
   String? get senderPublicKey => throw _privateConstructorUsedError;
   @JsonKey(name: "fee", includeIfNull: false)
   int? get fee => throw _privateConstructorUsedError;
-  @JsonKey(name: "vendorField", includeIfNull: false)
-  String? get vendorField => throw _privateConstructorUsedError;
-  @JsonKey(name: "vendorFieldHex", includeIfNull: false)
-  String? get vendorFieldHex => throw _privateConstructorUsedError;
+  @JsonKey(name: "memo", includeIfNull: false)
+  String? get memo => throw _privateConstructorUsedError;
+  @JsonKey(name: "memoHex", includeIfNull: false)
+  String? get memoHex => throw _privateConstructorUsedError;
   @JsonKey(name: "asset", includeIfNull: false)
   BroadcastTransactionAssetRequest? get asset =>
       throw _privateConstructorUsedError;
@@ -84,10 +84,10 @@ abstract class $BroadcastTransactionRequestCopyWith<$Res> {
           String? senderPublicKey,
       @JsonKey(name: "fee", includeIfNull: false)
           int? fee,
-      @JsonKey(name: "vendorField", includeIfNull: false)
-          String? vendorField,
-      @JsonKey(name: "vendorFieldHex", includeIfNull: false)
-          String? vendorFieldHex,
+      @JsonKey(name: "memo", includeIfNull: false)
+          String? memo,
+      @JsonKey(name: "memoHex", includeIfNull: false)
+          String? memoHex,
       @JsonKey(name: "asset", includeIfNull: false)
           BroadcastTransactionAssetRequest? asset,
       @JsonKey(name: "signature", includeIfNull: false)
@@ -126,8 +126,8 @@ class _$BroadcastTransactionRequestCopyWithImpl<$Res>
     Object? nonce = freezed,
     Object? senderPublicKey = freezed,
     Object? fee = freezed,
-    Object? vendorField = freezed,
-    Object? vendorFieldHex = freezed,
+    Object? memo = freezed,
+    Object? memoHex = freezed,
     Object? asset = freezed,
     Object? signature = freezed,
     Object? secondSignature = freezed,
@@ -166,13 +166,13 @@ class _$BroadcastTransactionRequestCopyWithImpl<$Res>
           ? _value.fee
           : fee // ignore: cast_nullable_to_non_nullable
               as int?,
-      vendorField: vendorField == freezed
-          ? _value.vendorField
-          : vendorField // ignore: cast_nullable_to_non_nullable
+      memo: memo == freezed
+          ? _value.memo
+          : memo // ignore: cast_nullable_to_non_nullable
               as String?,
-      vendorFieldHex: vendorFieldHex == freezed
-          ? _value.vendorFieldHex
-          : vendorFieldHex // ignore: cast_nullable_to_non_nullable
+      memoHex: memoHex == freezed
+          ? _value.memoHex
+          : memoHex // ignore: cast_nullable_to_non_nullable
               as String?,
       asset: asset == freezed
           ? _value.asset
@@ -245,10 +245,10 @@ abstract class _$$_BroadcastTransactionRequestCopyWith<$Res>
           String? senderPublicKey,
       @JsonKey(name: "fee", includeIfNull: false)
           int? fee,
-      @JsonKey(name: "vendorField", includeIfNull: false)
-          String? vendorField,
-      @JsonKey(name: "vendorFieldHex", includeIfNull: false)
-          String? vendorFieldHex,
+      @JsonKey(name: "memo", includeIfNull: false)
+          String? memo,
+      @JsonKey(name: "memoHex", includeIfNull: false)
+          String? memoHex,
       @JsonKey(name: "asset", includeIfNull: false)
           BroadcastTransactionAssetRequest? asset,
       @JsonKey(name: "signature", includeIfNull: false)
@@ -292,8 +292,8 @@ class __$$_BroadcastTransactionRequestCopyWithImpl<$Res>
     Object? nonce = freezed,
     Object? senderPublicKey = freezed,
     Object? fee = freezed,
-    Object? vendorField = freezed,
-    Object? vendorFieldHex = freezed,
+    Object? memo = freezed,
+    Object? memoHex = freezed,
     Object? asset = freezed,
     Object? signature = freezed,
     Object? secondSignature = freezed,
@@ -332,13 +332,13 @@ class __$$_BroadcastTransactionRequestCopyWithImpl<$Res>
           ? _value.fee
           : fee // ignore: cast_nullable_to_non_nullable
               as int?,
-      vendorField: vendorField == freezed
-          ? _value.vendorField
-          : vendorField // ignore: cast_nullable_to_non_nullable
+      memo: memo == freezed
+          ? _value.memo
+          : memo // ignore: cast_nullable_to_non_nullable
               as String?,
-      vendorFieldHex: vendorFieldHex == freezed
-          ? _value.vendorFieldHex
-          : vendorFieldHex // ignore: cast_nullable_to_non_nullable
+      memoHex: memoHex == freezed
+          ? _value.memoHex
+          : memoHex // ignore: cast_nullable_to_non_nullable
               as String?,
       asset: asset == freezed
           ? _value.asset
@@ -394,10 +394,10 @@ class _$_BroadcastTransactionRequest extends _BroadcastTransactionRequest {
           this.senderPublicKey,
       @JsonKey(name: "fee", includeIfNull: false)
           this.fee,
-      @JsonKey(name: "vendorField", includeIfNull: false)
-          this.vendorField,
-      @JsonKey(name: "vendorFieldHex", includeIfNull: false)
-          this.vendorFieldHex,
+      @JsonKey(name: "memo", includeIfNull: false)
+          this.memo,
+      @JsonKey(name: "memoHex", includeIfNull: false)
+          this.memoHex,
       @JsonKey(name: "asset", includeIfNull: false)
           this.asset,
       @JsonKey(name: "signature", includeIfNull: false)
@@ -442,11 +442,11 @@ class _$_BroadcastTransactionRequest extends _BroadcastTransactionRequest {
   @JsonKey(name: "fee", includeIfNull: false)
   final int? fee;
   @override
-  @JsonKey(name: "vendorField", includeIfNull: false)
-  final String? vendorField;
+  @JsonKey(name: "memo", includeIfNull: false)
+  final String? memo;
   @override
-  @JsonKey(name: "vendorFieldHex", includeIfNull: false)
-  final String? vendorFieldHex;
+  @JsonKey(name: "memoHex", includeIfNull: false)
+  final String? memoHex;
   @override
   @JsonKey(name: "asset", includeIfNull: false)
   final BroadcastTransactionAssetRequest? asset;
@@ -481,7 +481,7 @@ class _$_BroadcastTransactionRequest extends _BroadcastTransactionRequest {
 
   @override
   String toString() {
-    return 'BroadcastTransactionRequest(version: $version, network: $network, typeGroup: $typeGroup, type: $type, nonce: $nonce, senderPublicKey: $senderPublicKey, fee: $fee, vendorField: $vendorField, vendorFieldHex: $vendorFieldHex, asset: $asset, signature: $signature, secondSignature: $secondSignature, signatures: $signatures, amount: $amount, expiration: $expiration, recipientId: $recipientId, id: $id)';
+    return 'BroadcastTransactionRequest(version: $version, network: $network, typeGroup: $typeGroup, type: $type, nonce: $nonce, senderPublicKey: $senderPublicKey, fee: $fee, memo: $memo, memoHex: $memoHex, asset: $asset, signature: $signature, secondSignature: $secondSignature, signatures: $signatures, amount: $amount, expiration: $expiration, recipientId: $recipientId, id: $id)';
   }
 
   @override
@@ -497,10 +497,8 @@ class _$_BroadcastTransactionRequest extends _BroadcastTransactionRequest {
             const DeepCollectionEquality()
                 .equals(other.senderPublicKey, senderPublicKey) &&
             const DeepCollectionEquality().equals(other.fee, fee) &&
-            const DeepCollectionEquality()
-                .equals(other.vendorField, vendorField) &&
-            const DeepCollectionEquality()
-                .equals(other.vendorFieldHex, vendorFieldHex) &&
+            const DeepCollectionEquality().equals(other.memo, memo) &&
+            const DeepCollectionEquality().equals(other.memoHex, memoHex) &&
             const DeepCollectionEquality().equals(other.asset, asset) &&
             const DeepCollectionEquality().equals(other.signature, signature) &&
             const DeepCollectionEquality()
@@ -526,8 +524,8 @@ class _$_BroadcastTransactionRequest extends _BroadcastTransactionRequest {
       const DeepCollectionEquality().hash(nonce),
       const DeepCollectionEquality().hash(senderPublicKey),
       const DeepCollectionEquality().hash(fee),
-      const DeepCollectionEquality().hash(vendorField),
-      const DeepCollectionEquality().hash(vendorFieldHex),
+      const DeepCollectionEquality().hash(memo),
+      const DeepCollectionEquality().hash(memoHex),
       const DeepCollectionEquality().hash(asset),
       const DeepCollectionEquality().hash(signature),
       const DeepCollectionEquality().hash(secondSignature),
@@ -545,7 +543,9 @@ class _$_BroadcastTransactionRequest extends _BroadcastTransactionRequest {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_BroadcastTransactionRequestToJson(this);
+    return _$$_BroadcastTransactionRequestToJson(
+      this,
+    );
   }
 }
 
@@ -566,10 +566,10 @@ abstract class _BroadcastTransactionRequest
           final String? senderPublicKey,
       @JsonKey(name: "fee", includeIfNull: false)
           final int? fee,
-      @JsonKey(name: "vendorField", includeIfNull: false)
-          final String? vendorField,
-      @JsonKey(name: "vendorFieldHex", includeIfNull: false)
-          final String? vendorFieldHex,
+      @JsonKey(name: "memo", includeIfNull: false)
+          final String? memo,
+      @JsonKey(name: "memoHex", includeIfNull: false)
+          final String? memoHex,
       @JsonKey(name: "asset", includeIfNull: false)
           final BroadcastTransactionAssetRequest? asset,
       @JsonKey(name: "signature", includeIfNull: false)
@@ -593,56 +593,55 @@ abstract class _BroadcastTransactionRequest
 
   @override
   @JsonKey(name: "version", includeIfNull: false)
-  int? get version => throw _privateConstructorUsedError;
+  int? get version;
   @override
   @JsonKey(name: "network", includeIfNull: false)
-  int? get network => throw _privateConstructorUsedError;
+  int? get network;
   @override
   @JsonKey(name: "typeGroup", includeIfNull: false)
-  int? get typeGroup => throw _privateConstructorUsedError;
+  int? get typeGroup;
   @override
   @JsonKey(name: "type", includeIfNull: false)
-  int? get type => throw _privateConstructorUsedError;
+  int? get type;
   @override
   @JsonKey(name: "nonce", includeIfNull: false)
-  int? get nonce => throw _privateConstructorUsedError;
+  int? get nonce;
   @override
   @JsonKey(name: "senderPublicKey", includeIfNull: false)
-  String? get senderPublicKey => throw _privateConstructorUsedError;
+  String? get senderPublicKey;
   @override
   @JsonKey(name: "fee", includeIfNull: false)
-  int? get fee => throw _privateConstructorUsedError;
+  int? get fee;
   @override
-  @JsonKey(name: "vendorField", includeIfNull: false)
-  String? get vendorField => throw _privateConstructorUsedError;
+  @JsonKey(name: "memo", includeIfNull: false)
+  String? get memo;
   @override
-  @JsonKey(name: "vendorFieldHex", includeIfNull: false)
-  String? get vendorFieldHex => throw _privateConstructorUsedError;
+  @JsonKey(name: "memoHex", includeIfNull: false)
+  String? get memoHex;
   @override
   @JsonKey(name: "asset", includeIfNull: false)
-  BroadcastTransactionAssetRequest? get asset =>
-      throw _privateConstructorUsedError;
+  BroadcastTransactionAssetRequest? get asset;
   @override
   @JsonKey(name: "signature", includeIfNull: false)
-  String? get signature => throw _privateConstructorUsedError;
+  String? get signature;
   @override
   @JsonKey(name: "secondSignature", includeIfNull: false)
-  String? get secondSignature => throw _privateConstructorUsedError;
+  String? get secondSignature;
   @override
   @JsonKey(name: "signatures", includeIfNull: false)
-  List<String>? get signatures => throw _privateConstructorUsedError;
+  List<String>? get signatures;
   @override
   @JsonKey(name: "amount", includeIfNull: false)
-  int? get amount => throw _privateConstructorUsedError;
+  int? get amount;
   @override
   @JsonKey(name: "expiration", includeIfNull: false)
-  int? get expiration => throw _privateConstructorUsedError;
+  int? get expiration;
   @override
   @JsonKey(name: "recipientId", includeIfNull: false)
-  String? get recipientId => throw _privateConstructorUsedError;
+  String? get recipientId;
   @override
   @JsonKey(name: "id", includeIfNull: false)
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
   @override
   @JsonKey(ignore: true)
   _$$_BroadcastTransactionRequestCopyWith<_$_BroadcastTransactionRequest>

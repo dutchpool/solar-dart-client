@@ -150,7 +150,9 @@ class _$_BroadcastTransactionsRequest extends _BroadcastTransactionsRequest {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_BroadcastTransactionsRequestToJson(this);
+    return _$$_BroadcastTransactionsRequestToJson(
+      this,
+    );
   }
 }
 
@@ -167,8 +169,7 @@ abstract class _BroadcastTransactionsRequest
 
   @override
   @JsonKey(name: 'transactions')
-  List<BroadcastTransactionRequest> get transactions =>
-      throw _privateConstructorUsedError;
+  List<BroadcastTransactionRequest> get transactions;
   @override
   @JsonKey(ignore: true)
   _$$_BroadcastTransactionsRequestCopyWith<_$_BroadcastTransactionsRequest>

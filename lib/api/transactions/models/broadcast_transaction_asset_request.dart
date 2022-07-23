@@ -9,7 +9,7 @@ part 'broadcast_transaction_asset_request.g.dart';
 @freezed
 class BroadcastTransactionAssetRequest with _$BroadcastTransactionAssetRequest {
   const factory BroadcastTransactionAssetRequest({
-    List<String>? votes,
+    Map<String, double>? votes,
     //TODO: support other assets
   }) = _BroadcastTransactionAssetRequest;
 

@@ -305,7 +305,9 @@ class _$_MetaResponse extends _MetaResponse {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MetaResponseToJson(this);
+    return _$$_MetaResponseToJson(
+      this,
+    );
   }
 }
 
@@ -336,31 +338,31 @@ abstract class _MetaResponse extends MetaResponse {
 
   @override
   @JsonKey(name: 'totalCountIsEstimate')
-  bool get totalCountIsEstimate => throw _privateConstructorUsedError;
+  bool get totalCountIsEstimate;
   @override
   @JsonKey(name: 'count')
-  int get count => throw _privateConstructorUsedError;
+  int get count;
   @override
   @JsonKey(name: 'pageCount')
-  int get pageCount => throw _privateConstructorUsedError;
+  int get pageCount;
   @override
   @JsonKey(name: 'totalCount')
-  int get totalCount => throw _privateConstructorUsedError;
+  int get totalCount;
   @override
   @JsonKey(name: 'next')
-  String? get next => throw _privateConstructorUsedError;
+  String? get next;
   @override
   @JsonKey(name: 'previous')
-  String? get previous => throw _privateConstructorUsedError;
+  String? get previous;
   @override
   @JsonKey(name: 'self')
-  String? get self => throw _privateConstructorUsedError;
+  String? get self;
   @override
   @JsonKey(name: 'first')
-  String? get first => throw _privateConstructorUsedError;
+  String? get first;
   @override
   @JsonKey(name: 'last')
-  String? get last => throw _privateConstructorUsedError;
+  String? get last;
   @override
   @JsonKey(ignore: true)
   _$$_MetaResponseCopyWith<_$_MetaResponse> get copyWith =>

@@ -135,7 +135,9 @@ class _$_WalletAttributesResponse extends _WalletAttributesResponse {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_WalletAttributesResponseToJson(this);
+    return _$$_WalletAttributesResponseToJson(
+      this,
+    );
   }
 }
 
@@ -150,7 +152,7 @@ abstract class _WalletAttributesResponse extends WalletAttributesResponse {
 
   @override
   @JsonKey(name: 'vote')
-  String? get vote => throw _privateConstructorUsedError;
+  String? get vote;
   @override
   @JsonKey(ignore: true)
   _$$_WalletAttributesResponseCopyWith<_$_WalletAttributesResponse>

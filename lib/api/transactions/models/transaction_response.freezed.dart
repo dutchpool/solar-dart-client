@@ -428,7 +428,9 @@ class _$_TransactionResponse implements _TransactionResponse {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TransactionResponseToJson(this);
+    return _$$_TransactionResponseToJson(
+      this,
+    );
   }
 }
 
@@ -468,47 +470,46 @@ abstract class _TransactionResponse implements TransactionResponse {
 
   @override
   @JsonKey(name: 'id')
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
   @JsonKey(name: 'blockId')
-  String get blockId => throw _privateConstructorUsedError;
+  String get blockId;
   @override
   @JsonKey(name: 'version')
-  int get version => throw _privateConstructorUsedError;
+  int get version;
   @override
   @JsonKey(name: 'type')
-  int get type => throw _privateConstructorUsedError;
+  int get type;
   @override
   @JsonKey(name: 'typeGroup')
-  int get typeGroup => throw _privateConstructorUsedError;
+  int get typeGroup;
   @override
   @JsonKey(name: 'amount')
-  String get amount => throw _privateConstructorUsedError;
+  String get amount;
   @override
   @JsonKey(name: 'fee')
-  String get fee => throw _privateConstructorUsedError;
+  String get fee;
   @override
   @JsonKey(name: 'sender')
-  String? get sender => throw _privateConstructorUsedError;
+  String? get sender;
   @override
   @JsonKey(name: 'senderPublicKey')
-  String? get senderPublicKey => throw _privateConstructorUsedError;
+  String? get senderPublicKey;
   @override
   @JsonKey(name: 'recipient')
-  String? get recipient => throw _privateConstructorUsedError;
+  String? get recipient;
   @override
   @JsonKey(name: 'signature')
-  String? get signature => throw _privateConstructorUsedError;
+  String? get signature;
   @override
   @JsonKey(name: 'nonce')
-  String? get nonce => throw _privateConstructorUsedError;
+  String? get nonce;
   @override
   @JsonKey(name: 'timestamp')
-  TransactionTimestampResponse? get timestamp =>
-      throw _privateConstructorUsedError;
+  TransactionTimestampResponse? get timestamp;
   @override
   @JsonKey(name: 'asset')
-  TransactionAssetResponse? get asset => throw _privateConstructorUsedError;
+  TransactionAssetResponse? get asset;
   @override
   @JsonKey(ignore: true)
   _$$_TransactionResponseCopyWith<_$_TransactionResponse> get copyWith =>

@@ -21,7 +21,7 @@ BroadcastTransactionAssetRequest _$BroadcastTransactionAssetRequestFromJson(
 
 /// @nodoc
 mixin _$BroadcastTransactionAssetRequest {
-  List<String>? get votes => throw _privateConstructorUsedError;
+  Map<String, double>? get votes => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +35,7 @@ abstract class $BroadcastTransactionAssetRequestCopyWith<$Res> {
           BroadcastTransactionAssetRequest value,
           $Res Function(BroadcastTransactionAssetRequest) then) =
       _$BroadcastTransactionAssetRequestCopyWithImpl<$Res>;
-  $Res call({List<String>? votes});
+  $Res call({Map<String, double>? votes});
 }
 
 /// @nodoc
@@ -55,7 +55,7 @@ class _$BroadcastTransactionAssetRequestCopyWithImpl<$Res>
       votes: votes == freezed
           ? _value.votes
           : votes // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+              as Map<String, double>?,
     ));
   }
 }
@@ -68,7 +68,7 @@ abstract class _$$_BroadcastTransactionAssetRequestCopyWith<$Res>
           $Res Function(_$_BroadcastTransactionAssetRequest) then) =
       __$$_BroadcastTransactionAssetRequestCopyWithImpl<$Res>;
   @override
-  $Res call({List<String>? votes});
+  $Res call({Map<String, double>? votes});
 }
 
 /// @nodoc
@@ -92,7 +92,7 @@ class __$$_BroadcastTransactionAssetRequestCopyWithImpl<$Res>
       votes: votes == freezed
           ? _value._votes
           : votes // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+              as Map<String, double>?,
     ));
   }
 }
@@ -101,7 +101,7 @@ class __$$_BroadcastTransactionAssetRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_BroadcastTransactionAssetRequest
     extends _BroadcastTransactionAssetRequest {
-  const _$_BroadcastTransactionAssetRequest({final List<String>? votes})
+  const _$_BroadcastTransactionAssetRequest({final Map<String, double>? votes})
       : _votes = votes,
         super._();
 
@@ -109,13 +109,13 @@ class _$_BroadcastTransactionAssetRequest
           Map<String, dynamic> json) =>
       _$$_BroadcastTransactionAssetRequestFromJson(json);
 
-  final List<String>? _votes;
+  final Map<String, double>? _votes;
   @override
-  List<String>? get votes {
+  Map<String, double>? get votes {
     final value = _votes;
     if (value == null) return null;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableMapView(value);
   }
 
   @override
@@ -145,21 +145,23 @@ class _$_BroadcastTransactionAssetRequest
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_BroadcastTransactionAssetRequestToJson(this);
+    return _$$_BroadcastTransactionAssetRequestToJson(
+      this,
+    );
   }
 }
 
 abstract class _BroadcastTransactionAssetRequest
     extends BroadcastTransactionAssetRequest {
-  const factory _BroadcastTransactionAssetRequest({final List<String>? votes}) =
-      _$_BroadcastTransactionAssetRequest;
+  const factory _BroadcastTransactionAssetRequest(
+      {final Map<String, double>? votes}) = _$_BroadcastTransactionAssetRequest;
   const _BroadcastTransactionAssetRequest._() : super._();
 
   factory _BroadcastTransactionAssetRequest.fromJson(
       Map<String, dynamic> json) = _$_BroadcastTransactionAssetRequest.fromJson;
 
   @override
-  List<String>? get votes => throw _privateConstructorUsedError;
+  Map<String, double>? get votes;
   @override
   @JsonKey(ignore: true)
   _$$_BroadcastTransactionAssetRequestCopyWith<

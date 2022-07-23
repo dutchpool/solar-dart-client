@@ -16,8 +16,8 @@ _$_BroadcastTransactionRequest _$$_BroadcastTransactionRequestFromJson(
       nonce: json['nonce'] as int?,
       senderPublicKey: json['senderPublicKey'] as String?,
       fee: json['fee'] as int?,
-      vendorField: json['vendorField'] as String?,
-      vendorFieldHex: json['vendorFieldHex'] as String?,
+      memo: json['memo'] as String?,
+      memoHex: json['memoHex'] as String?,
       asset: json['asset'] == null
           ? null
           : BroadcastTransactionAssetRequest.fromJson(
@@ -50,8 +50,8 @@ Map<String, dynamic> _$$_BroadcastTransactionRequestToJson(
   writeNotNull('nonce', instance.nonce);
   writeNotNull('senderPublicKey', instance.senderPublicKey);
   writeNotNull('fee', instance.fee);
-  writeNotNull('vendorField', instance.vendorField);
-  writeNotNull('vendorFieldHex', instance.vendorFieldHex);
+  writeNotNull('memo', instance.memo);
+  writeNotNull('memoHex', instance.memoHex);
   writeNotNull('asset', instance.asset);
   writeNotNull('signature', instance.signature);
   writeNotNull('secondSignature', instance.secondSignature);

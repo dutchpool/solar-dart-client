@@ -180,7 +180,9 @@ class _$_TransactionAssetResponse implements _TransactionAssetResponse {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TransactionAssetResponseToJson(this);
+    return _$$_TransactionAssetResponseToJson(
+      this,
+    );
   }
 }
 
@@ -197,11 +199,10 @@ abstract class _TransactionAssetResponse implements TransactionAssetResponse {
 
   @override
   @JsonKey(name: 'votes')
-  List<String>? get votes => throw _privateConstructorUsedError;
+  List<String>? get votes;
   @override
   @JsonKey(name: 'payments')
-  List<TransactionAssetPaymentResponse>? get payments =>
-      throw _privateConstructorUsedError;
+  List<TransactionAssetPaymentResponse>? get payments;
   @override
   @JsonKey(ignore: true)
   _$$_TransactionAssetResponseCopyWith<_$_TransactionAssetResponse>
