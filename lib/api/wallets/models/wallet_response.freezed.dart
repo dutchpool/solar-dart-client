@@ -31,6 +31,9 @@ mixin _$WalletResponse {
   @JsonKey(name: 'attributes')
   WalletAttributesResponse? get attributes =>
       throw _privateConstructorUsedError;
+  @JsonKey(name: 'votingFor')
+  Map<String, WalletVotingForResponse>? get votingFor =>
+      throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -44,11 +47,18 @@ abstract class $WalletResponseCopyWith<$Res> {
           WalletResponse value, $Res Function(WalletResponse) then) =
       _$WalletResponseCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(name: 'address') String address,
-      @JsonKey(name: 'publicKey') String? publicKey,
-      @JsonKey(name: 'balance') String balance,
-      @JsonKey(name: 'nonce') String nonce,
-      @JsonKey(name: 'attributes') WalletAttributesResponse? attributes});
+      {@JsonKey(name: 'address')
+          String address,
+      @JsonKey(name: 'publicKey')
+          String? publicKey,
+      @JsonKey(name: 'balance')
+          String balance,
+      @JsonKey(name: 'nonce')
+          String nonce,
+      @JsonKey(name: 'attributes')
+          WalletAttributesResponse? attributes,
+      @JsonKey(name: 'votingFor')
+          Map<String, WalletVotingForResponse>? votingFor});
 
   $WalletAttributesResponseCopyWith<$Res>? get attributes;
 }
@@ -69,6 +79,7 @@ class _$WalletResponseCopyWithImpl<$Res>
     Object? balance = freezed,
     Object? nonce = freezed,
     Object? attributes = freezed,
+    Object? votingFor = freezed,
   }) {
     return _then(_value.copyWith(
       address: address == freezed
@@ -91,6 +102,10 @@ class _$WalletResponseCopyWithImpl<$Res>
           ? _value.attributes
           : attributes // ignore: cast_nullable_to_non_nullable
               as WalletAttributesResponse?,
+      votingFor: votingFor == freezed
+          ? _value.votingFor
+          : votingFor // ignore: cast_nullable_to_non_nullable
+              as Map<String, WalletVotingForResponse>?,
     ));
   }
 
@@ -114,11 +129,18 @@ abstract class _$$_WalletResponseCopyWith<$Res>
       __$$_WalletResponseCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(name: 'address') String address,
-      @JsonKey(name: 'publicKey') String? publicKey,
-      @JsonKey(name: 'balance') String balance,
-      @JsonKey(name: 'nonce') String nonce,
-      @JsonKey(name: 'attributes') WalletAttributesResponse? attributes});
+      {@JsonKey(name: 'address')
+          String address,
+      @JsonKey(name: 'publicKey')
+          String? publicKey,
+      @JsonKey(name: 'balance')
+          String balance,
+      @JsonKey(name: 'nonce')
+          String nonce,
+      @JsonKey(name: 'attributes')
+          WalletAttributesResponse? attributes,
+      @JsonKey(name: 'votingFor')
+          Map<String, WalletVotingForResponse>? votingFor});
 
   @override
   $WalletAttributesResponseCopyWith<$Res>? get attributes;
@@ -142,6 +164,7 @@ class __$$_WalletResponseCopyWithImpl<$Res>
     Object? balance = freezed,
     Object? nonce = freezed,
     Object? attributes = freezed,
+    Object? votingFor = freezed,
   }) {
     return _then(_$_WalletResponse(
       address: address == freezed
@@ -164,6 +187,10 @@ class __$$_WalletResponseCopyWithImpl<$Res>
           ? _value.attributes
           : attributes // ignore: cast_nullable_to_non_nullable
               as WalletAttributesResponse?,
+      votingFor: votingFor == freezed
+          ? _value._votingFor
+          : votingFor // ignore: cast_nullable_to_non_nullable
+              as Map<String, WalletVotingForResponse>?,
     ));
   }
 }
@@ -172,12 +199,20 @@ class __$$_WalletResponseCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_WalletResponse extends _WalletResponse {
   const _$_WalletResponse(
-      {@JsonKey(name: 'address') required this.address,
-      @JsonKey(name: 'publicKey') required this.publicKey,
-      @JsonKey(name: 'balance') required this.balance,
-      @JsonKey(name: 'nonce') required this.nonce,
-      @JsonKey(name: 'attributes') required this.attributes})
-      : super._();
+      {@JsonKey(name: 'address')
+          required this.address,
+      @JsonKey(name: 'publicKey')
+          required this.publicKey,
+      @JsonKey(name: 'balance')
+          required this.balance,
+      @JsonKey(name: 'nonce')
+          required this.nonce,
+      @JsonKey(name: 'attributes')
+          required this.attributes,
+      @JsonKey(name: 'votingFor')
+          required final Map<String, WalletVotingForResponse>? votingFor})
+      : _votingFor = votingFor,
+        super._();
 
   factory _$_WalletResponse.fromJson(Map<String, dynamic> json) =>
       _$$_WalletResponseFromJson(json);
@@ -197,10 +232,19 @@ class _$_WalletResponse extends _WalletResponse {
   @override
   @JsonKey(name: 'attributes')
   final WalletAttributesResponse? attributes;
+  final Map<String, WalletVotingForResponse>? _votingFor;
+  @override
+  @JsonKey(name: 'votingFor')
+  Map<String, WalletVotingForResponse>? get votingFor {
+    final value = _votingFor;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
 
   @override
   String toString() {
-    return 'WalletResponse(address: $address, publicKey: $publicKey, balance: $balance, nonce: $nonce, attributes: $attributes)';
+    return 'WalletResponse(address: $address, publicKey: $publicKey, balance: $balance, nonce: $nonce, attributes: $attributes, votingFor: $votingFor)';
   }
 
   @override
@@ -213,7 +257,9 @@ class _$_WalletResponse extends _WalletResponse {
             const DeepCollectionEquality().equals(other.balance, balance) &&
             const DeepCollectionEquality().equals(other.nonce, nonce) &&
             const DeepCollectionEquality()
-                .equals(other.attributes, attributes));
+                .equals(other.attributes, attributes) &&
+            const DeepCollectionEquality()
+                .equals(other._votingFor, _votingFor));
   }
 
   @JsonKey(ignore: true)
@@ -224,7 +270,8 @@ class _$_WalletResponse extends _WalletResponse {
       const DeepCollectionEquality().hash(publicKey),
       const DeepCollectionEquality().hash(balance),
       const DeepCollectionEquality().hash(nonce),
-      const DeepCollectionEquality().hash(attributes));
+      const DeepCollectionEquality().hash(attributes),
+      const DeepCollectionEquality().hash(_votingFor));
 
   @JsonKey(ignore: true)
   @override
@@ -250,7 +297,9 @@ abstract class _WalletResponse extends WalletResponse {
           @JsonKey(name: 'nonce')
               required final String nonce,
           @JsonKey(name: 'attributes')
-              required final WalletAttributesResponse? attributes}) =
+              required final WalletAttributesResponse? attributes,
+          @JsonKey(name: 'votingFor')
+              required final Map<String, WalletVotingForResponse>? votingFor}) =
       _$_WalletResponse;
   const _WalletResponse._() : super._();
 
@@ -272,6 +321,9 @@ abstract class _WalletResponse extends WalletResponse {
   @override
   @JsonKey(name: 'attributes')
   WalletAttributesResponse? get attributes;
+  @override
+  @JsonKey(name: 'votingFor')
+  Map<String, WalletVotingForResponse>? get votingFor;
   @override
   @JsonKey(ignore: true)
   _$$_WalletResponseCopyWith<_$_WalletResponse> get copyWith =>

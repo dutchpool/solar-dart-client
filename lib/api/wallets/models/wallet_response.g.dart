@@ -16,6 +16,10 @@ _$_WalletResponse _$$_WalletResponseFromJson(Map<String, dynamic> json) =>
           ? null
           : WalletAttributesResponse.fromJson(
               json['attributes'] as Map<String, dynamic>),
+      votingFor: (json['votingFor'] as Map<String, dynamic>?)?.map(
+        (k, e) => MapEntry(
+            k, WalletVotingForResponse.fromJson(e as Map<String, dynamic>)),
+      ),
     );
 
 Map<String, dynamic> _$$_WalletResponseToJson(_$_WalletResponse instance) =>
@@ -25,4 +29,5 @@ Map<String, dynamic> _$$_WalletResponseToJson(_$_WalletResponse instance) =>
       'balance': instance.balance,
       'nonce': instance.nonce,
       'attributes': instance.attributes,
+      'votingFor': instance.votingFor,
     };
