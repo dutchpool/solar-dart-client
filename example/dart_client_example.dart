@@ -1,6 +1,7 @@
+import 'dart:convert';
 import 'dart:io';
 
-import 'package:dart_client/api/transactions/models/broadcast_transactions_request.dart';
+import 'package:dart_client/api/transactions/models/broadcast/broadcast_transactions_request.dart';
 import 'package:dart_client/client.dart';
 import 'package:dart_crypto/identities/address.dart';
 import 'package:dart_crypto/identities/public_key.dart';
@@ -14,15 +15,20 @@ void main(List<String> arguments) async {
   final parser = ArgParser();
   final transferCommand = getTransferCommand(parser);
   final voteCommand = getVoteCommand(parser);
+  final multiVoteCommand = getMultiVoteCommand(parser);
 
   try {
     ArgResults argResults = parser.parse(arguments);
     if (argResults.command?.name == "transfer") {
       // int success = await handleTransferCommand(transferCommand, arguments);
-      stdout.writeln("Transfer transactions are currently not supported by dart-crypto, so dart-client can't handle those right now.");
-      exitCode = 1;//success;
+      stdout.writeln(
+          "Transfer transactions are currently not supported by dart-crypto, so dart-client can't handle those right now.");
+      exitCode = 1; //success;
     } else if (argResults.command?.name == "vote") {
       int success = await handleVoteCommand(voteCommand, arguments);
+      exitCode = success;
+    } else if (argResults.command?.name == "multivote") {
+      int success = await handleMultiVoteCommand(multiVoteCommand, arguments);
       exitCode = success;
     } else {
       exitCode = 1;
@@ -53,7 +59,18 @@ ArgParser getVoteCommand(ArgParser parser) {
   return voteCommand;
 }
 
-Future<int> handleTransferCommand(ArgParser transferCommand, List<String> arguments) async {
+ArgParser getMultiVoteCommand(ArgParser parser) {
+  final multivoteCommand = parser.addCommand('multivote');
+  multivoteCommand.addOption('baseUrl');
+  multivoteCommand.addOption('network', allowed: ['testnet', 'mainnet']);
+  multivoteCommand.addOption('votes');
+  multivoteCommand.addOption('fee');
+  multivoteCommand.addOption('passphrase');
+  return multivoteCommand;
+}
+
+Future<int> handleTransferCommand(
+    ArgParser transferCommand, List<String> arguments) async {
   ArgResults transferArgs = transferCommand.parse(arguments);
   bool success = true;
   for (final option in transferArgs.options) {
@@ -70,10 +87,9 @@ Future<int> handleTransferCommand(ArgParser transferCommand, List<String> argume
   }
   if (success) {
     final client =
-    Client(baseUrl: transferArgs["baseUrl"], isDevelopment: false);
+        Client(baseUrl: transferArgs["baseUrl"], isDevelopment: false);
     final walletAddress = Address.fromPassphrase(transferArgs["passphrase"]);
-    final wallet =
-        await client.wallets.getWallet(walletAddress: walletAddress);
+    final wallet = await client.wallets.getWallet(walletAddress: walletAddress);
     final transferTransaction = createTransferTransaction(
       address: transferArgs["address"],
       amount: int.parse(transferArgs["amount"]),
@@ -99,7 +115,8 @@ Future<int> handleTransferCommand(ArgParser transferCommand, List<String> argume
   return 1;
 }
 
-Future<int> handleVoteCommand(ArgParser voteCommand, List<String> arguments) async {
+Future<int> handleVoteCommand(
+    ArgParser voteCommand, List<String> arguments) async {
   ArgResults voteArgs = voteCommand.parse(arguments);
   bool success = true;
   for (final option in voteArgs.options) {
@@ -109,20 +126,17 @@ Future<int> handleVoteCommand(ArgParser voteCommand, List<String> arguments) asy
     }
   }
   if (success) {
-    if (voteArgs["network"] != "testnet" &&
-        voteArgs["network"] != "mainnet") {
+    if (voteArgs["network"] != "testnet" && voteArgs["network"] != "mainnet") {
       success = false;
     }
   }
   if (success) {
-    final client =
-    Client(baseUrl: voteArgs["baseUrl"], isDevelopment: false);
+    final client = Client(baseUrl: voteArgs["baseUrl"], isDevelopment: false);
     final walletAddress = Address.fromPassphrase(
       voteArgs["passphrase"],
-      networkVersion:
-        voteArgs["network"] == "mainnet"
-            ? Mainnet().version()
-            : Testnet().version(),
+      networkVersion: voteArgs["network"] == "mainnet"
+          ? Mainnet().version()
+          : Testnet().version(),
     );
     final wallet = await client.wallets.getWallet(walletAddress: walletAddress);
     final voteTransaction = createVoteTransaction(
@@ -133,9 +147,72 @@ Future<int> handleVoteCommand(ArgParser voteCommand, List<String> arguments) asy
       newVote: voteArgs["vote"],
     );
     final transactionBroadcastResponse =
-    await client.transactions.broadcastTransactions(
+        await client.transactions.broadcastTransactions(
       broadcastTransactionsRequest:
-      BroadcastTransactionsRequest.fromTransaction(voteTransaction),
+          BroadcastTransactionsRequest.fromTransaction(voteTransaction),
+    );
+    if (transactionBroadcastResponse.errors?.isNotEmpty == true) {
+      stdout.write(transactionBroadcastResponse.errors);
+    } else {
+      stdout.write(transactionBroadcastResponse.data?.toJson());
+    }
+    if (transactionBroadcastResponse.data?.accept?.isNotEmpty == true) {
+      return 0;
+    }
+  }
+  return 1;
+}
+
+Future<int> handleMultiVoteCommand(
+    ArgParser multiVoteCommand, List<String> arguments) async {
+  ArgResults multiVoteArgs = multiVoteCommand.parse(arguments);
+  bool success = true;
+  for (final option in multiVoteArgs.options) {
+    if (!multiVoteArgs.wasParsed(option)) {
+      stdout.writeln("--$option argument missing for multivote command");
+      success = false;
+    }
+  }
+  if (success) {
+    if (multiVoteArgs["network"] != "testnet" && multiVoteArgs["network"] != "mainnet") {
+      success = false;
+    }
+  }
+  if (success) {
+    final client = Client(baseUrl: multiVoteArgs["baseUrl"], isDevelopment: false);
+    final walletAddress = Address.fromPassphrase(
+      multiVoteArgs["passphrase"],
+      networkVersion: multiVoteArgs["network"] == "mainnet"
+          ? Mainnet().version()
+          : Testnet().version(),
+    );
+    Map<String, double> votes = {};
+
+    List<String> pairs = multiVoteArgs["votes"].split(';');
+    for (String pair in pairs) {
+      List<String> keyValue = pair.split('=');
+      if (keyValue.length == 2) {
+        votes[keyValue[0]] = double.tryParse(keyValue[1]) ?? 0.0;
+      }
+    }
+
+    print(votes);
+
+    // final Map<String, dynamic> votesJson = jsonDecode(multiVoteArgs["votes"]);
+    // Map<String, double> votes =
+    //     votesJson.map((key, value) => MapEntry(key, value.toDouble()));
+    final wallet = await client.wallets.getWallet(walletAddress: walletAddress);
+    final voteTransaction = createMultiVoteTransaction(
+      passphrase: multiVoteArgs["passphrase"],
+      nonce: int.parse(wallet.data?.nonce ?? "0") + 1,
+      network: multiVoteArgs["network"],
+      fee: int.parse(multiVoteArgs["fee"]),
+      votes: votes,
+    );
+    final transactionBroadcastResponse =
+        await client.transactions.broadcastTransactions(
+      broadcastTransactionsRequest:
+          BroadcastTransactionsRequest.fromTransaction(voteTransaction),
     );
     if (transactionBroadcastResponse.errors?.isNotEmpty == true) {
       stdout.write(transactionBroadcastResponse.errors);
@@ -187,6 +264,32 @@ VoteTransaction createVoteTransaction({
     [
       "+$newVote",
     ],
+    passphrase: passphrase,
+    fee: fee,
+  );
+
+  if (network == "mainnet") {
+    voteTransaction.network = Mainnet().version();
+  } else {
+    voteTransaction.network = Testnet().version();
+  }
+  voteTransaction.nonce = nonce;
+  voteTransaction.expiration = 0;
+  voteTransaction.senderPublicKey = PublicKey.fromPassphrase(passphrase);
+
+  voteTransaction.schnorrSign(passphrase);
+  return voteTransaction;
+}
+
+VoteTransaction createMultiVoteTransaction({
+  required String passphrase,
+  required int nonce,
+  required Map<String, double> votes,
+  required String network,
+  required int fee,
+}) {
+  final VoteTransaction voteTransaction = VoteTransaction(
+    votes,
     passphrase: passphrase,
     fee: fee,
   );

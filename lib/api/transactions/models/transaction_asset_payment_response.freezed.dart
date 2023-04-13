@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'transaction_asset_payment_response.dart';
 
@@ -37,36 +37,41 @@ abstract class $TransactionAssetPaymentResponseCopyWith<$Res> {
   factory $TransactionAssetPaymentResponseCopyWith(
           TransactionAssetPaymentResponse value,
           $Res Function(TransactionAssetPaymentResponse) then) =
-      _$TransactionAssetPaymentResponseCopyWithImpl<$Res>;
+      _$TransactionAssetPaymentResponseCopyWithImpl<$Res,
+          TransactionAssetPaymentResponse>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'amount') String amount,
       @JsonKey(name: 'recipientId') String recipientId});
 }
 
 /// @nodoc
-class _$TransactionAssetPaymentResponseCopyWithImpl<$Res>
+class _$TransactionAssetPaymentResponseCopyWithImpl<$Res,
+        $Val extends TransactionAssetPaymentResponse>
     implements $TransactionAssetPaymentResponseCopyWith<$Res> {
   _$TransactionAssetPaymentResponseCopyWithImpl(this._value, this._then);
 
-  final TransactionAssetPaymentResponse _value;
   // ignore: unused_field
-  final $Res Function(TransactionAssetPaymentResponse) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? amount = freezed,
-    Object? recipientId = freezed,
+    Object? amount = null,
+    Object? recipientId = null,
   }) {
     return _then(_value.copyWith(
-      amount: amount == freezed
+      amount: null == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
               as String,
-      recipientId: recipientId == freezed
+      recipientId: null == recipientId
           ? _value.recipientId
           : recipientId // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
@@ -78,6 +83,7 @@ abstract class _$$_TransactionAssetPaymentResponseCopyWith<$Res>
           $Res Function(_$_TransactionAssetPaymentResponse) then) =
       __$$_TransactionAssetPaymentResponseCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'amount') String amount,
       @JsonKey(name: 'recipientId') String recipientId});
@@ -85,28 +91,26 @@ abstract class _$$_TransactionAssetPaymentResponseCopyWith<$Res>
 
 /// @nodoc
 class __$$_TransactionAssetPaymentResponseCopyWithImpl<$Res>
-    extends _$TransactionAssetPaymentResponseCopyWithImpl<$Res>
+    extends _$TransactionAssetPaymentResponseCopyWithImpl<$Res,
+        _$_TransactionAssetPaymentResponse>
     implements _$$_TransactionAssetPaymentResponseCopyWith<$Res> {
   __$$_TransactionAssetPaymentResponseCopyWithImpl(
       _$_TransactionAssetPaymentResponse _value,
       $Res Function(_$_TransactionAssetPaymentResponse) _then)
-      : super(_value, (v) => _then(v as _$_TransactionAssetPaymentResponse));
+      : super(_value, _then);
 
-  @override
-  _$_TransactionAssetPaymentResponse get _value =>
-      super._value as _$_TransactionAssetPaymentResponse;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? amount = freezed,
-    Object? recipientId = freezed,
+    Object? amount = null,
+    Object? recipientId = null,
   }) {
     return _then(_$_TransactionAssetPaymentResponse(
-      amount: amount == freezed
+      amount: null == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
               as String,
-      recipientId: recipientId == freezed
+      recipientId: null == recipientId
           ? _value.recipientId
           : recipientId // ignore: cast_nullable_to_non_nullable
               as String,
@@ -143,20 +147,18 @@ class _$_TransactionAssetPaymentResponse
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_TransactionAssetPaymentResponse &&
-            const DeepCollectionEquality().equals(other.amount, amount) &&
-            const DeepCollectionEquality()
-                .equals(other.recipientId, recipientId));
+            (identical(other.amount, amount) || other.amount == amount) &&
+            (identical(other.recipientId, recipientId) ||
+                other.recipientId == recipientId));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(amount),
-      const DeepCollectionEquality().hash(recipientId));
+  int get hashCode => Object.hash(runtimeType, amount, recipientId);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_TransactionAssetPaymentResponseCopyWith<
           _$_TransactionAssetPaymentResponse>
       get copyWith => __$$_TransactionAssetPaymentResponseCopyWithImpl<

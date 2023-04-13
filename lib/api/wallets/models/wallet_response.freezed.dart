@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'wallet_response.dart';
 
@@ -45,7 +45,8 @@ mixin _$WalletResponse {
 abstract class $WalletResponseCopyWith<$Res> {
   factory $WalletResponseCopyWith(
           WalletResponse value, $Res Function(WalletResponse) then) =
-      _$WalletResponseCopyWithImpl<$Res>;
+      _$WalletResponseCopyWithImpl<$Res, WalletResponse>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'address')
           String address,
@@ -64,59 +65,62 @@ abstract class $WalletResponseCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$WalletResponseCopyWithImpl<$Res>
+class _$WalletResponseCopyWithImpl<$Res, $Val extends WalletResponse>
     implements $WalletResponseCopyWith<$Res> {
   _$WalletResponseCopyWithImpl(this._value, this._then);
 
-  final WalletResponse _value;
   // ignore: unused_field
-  final $Res Function(WalletResponse) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? address = freezed,
+    Object? address = null,
     Object? publicKey = freezed,
-    Object? balance = freezed,
-    Object? nonce = freezed,
+    Object? balance = null,
+    Object? nonce = null,
     Object? attributes = freezed,
     Object? votingFor = freezed,
   }) {
     return _then(_value.copyWith(
-      address: address == freezed
+      address: null == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
               as String,
-      publicKey: publicKey == freezed
+      publicKey: freezed == publicKey
           ? _value.publicKey
           : publicKey // ignore: cast_nullable_to_non_nullable
               as String?,
-      balance: balance == freezed
+      balance: null == balance
           ? _value.balance
           : balance // ignore: cast_nullable_to_non_nullable
               as String,
-      nonce: nonce == freezed
+      nonce: null == nonce
           ? _value.nonce
           : nonce // ignore: cast_nullable_to_non_nullable
               as String,
-      attributes: attributes == freezed
+      attributes: freezed == attributes
           ? _value.attributes
           : attributes // ignore: cast_nullable_to_non_nullable
               as WalletAttributesResponse?,
-      votingFor: votingFor == freezed
+      votingFor: freezed == votingFor
           ? _value.votingFor
           : votingFor // ignore: cast_nullable_to_non_nullable
               as Map<String, WalletVotingForResponse>?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $WalletAttributesResponseCopyWith<$Res>? get attributes {
     if (_value.attributes == null) {
       return null;
     }
 
     return $WalletAttributesResponseCopyWith<$Res>(_value.attributes!, (value) {
-      return _then(_value.copyWith(attributes: value));
+      return _then(_value.copyWith(attributes: value) as $Val);
     });
   }
 }
@@ -128,6 +132,7 @@ abstract class _$$_WalletResponseCopyWith<$Res>
           _$_WalletResponse value, $Res Function(_$_WalletResponse) then) =
       __$$_WalletResponseCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'address')
           String address,
@@ -148,46 +153,44 @@ abstract class _$$_WalletResponseCopyWith<$Res>
 
 /// @nodoc
 class __$$_WalletResponseCopyWithImpl<$Res>
-    extends _$WalletResponseCopyWithImpl<$Res>
+    extends _$WalletResponseCopyWithImpl<$Res, _$_WalletResponse>
     implements _$$_WalletResponseCopyWith<$Res> {
   __$$_WalletResponseCopyWithImpl(
       _$_WalletResponse _value, $Res Function(_$_WalletResponse) _then)
-      : super(_value, (v) => _then(v as _$_WalletResponse));
+      : super(_value, _then);
 
-  @override
-  _$_WalletResponse get _value => super._value as _$_WalletResponse;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? address = freezed,
+    Object? address = null,
     Object? publicKey = freezed,
-    Object? balance = freezed,
-    Object? nonce = freezed,
+    Object? balance = null,
+    Object? nonce = null,
     Object? attributes = freezed,
     Object? votingFor = freezed,
   }) {
     return _then(_$_WalletResponse(
-      address: address == freezed
+      address: null == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
               as String,
-      publicKey: publicKey == freezed
+      publicKey: freezed == publicKey
           ? _value.publicKey
           : publicKey // ignore: cast_nullable_to_non_nullable
               as String?,
-      balance: balance == freezed
+      balance: null == balance
           ? _value.balance
           : balance // ignore: cast_nullable_to_non_nullable
               as String,
-      nonce: nonce == freezed
+      nonce: null == nonce
           ? _value.nonce
           : nonce // ignore: cast_nullable_to_non_nullable
               as String,
-      attributes: attributes == freezed
+      attributes: freezed == attributes
           ? _value.attributes
           : attributes // ignore: cast_nullable_to_non_nullable
               as WalletAttributesResponse?,
-      votingFor: votingFor == freezed
+      votingFor: freezed == votingFor
           ? _value._votingFor
           : votingFor // ignore: cast_nullable_to_non_nullable
               as Map<String, WalletVotingForResponse>?,
@@ -238,6 +241,7 @@ class _$_WalletResponse extends _WalletResponse {
   Map<String, WalletVotingForResponse>? get votingFor {
     final value = _votingFor;
     if (value == null) return null;
+    if (_votingFor is EqualUnmodifiableMapView) return _votingFor;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableMapView(value);
   }
@@ -252,29 +256,25 @@ class _$_WalletResponse extends _WalletResponse {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_WalletResponse &&
-            const DeepCollectionEquality().equals(other.address, address) &&
-            const DeepCollectionEquality().equals(other.publicKey, publicKey) &&
-            const DeepCollectionEquality().equals(other.balance, balance) &&
-            const DeepCollectionEquality().equals(other.nonce, nonce) &&
-            const DeepCollectionEquality()
-                .equals(other.attributes, attributes) &&
+            (identical(other.address, address) || other.address == address) &&
+            (identical(other.publicKey, publicKey) ||
+                other.publicKey == publicKey) &&
+            (identical(other.balance, balance) || other.balance == balance) &&
+            (identical(other.nonce, nonce) || other.nonce == nonce) &&
+            (identical(other.attributes, attributes) ||
+                other.attributes == attributes) &&
             const DeepCollectionEquality()
                 .equals(other._votingFor, _votingFor));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(address),
-      const DeepCollectionEquality().hash(publicKey),
-      const DeepCollectionEquality().hash(balance),
-      const DeepCollectionEquality().hash(nonce),
-      const DeepCollectionEquality().hash(attributes),
-      const DeepCollectionEquality().hash(_votingFor));
+  int get hashCode => Object.hash(runtimeType, address, publicKey, balance,
+      nonce, attributes, const DeepCollectionEquality().hash(_votingFor));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_WalletResponseCopyWith<_$_WalletResponse> get copyWith =>
       __$$_WalletResponseCopyWithImpl<_$_WalletResponse>(this, _$identity);
 

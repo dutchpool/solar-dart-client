@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'transaction_asset_response.dart';
 
@@ -37,7 +37,8 @@ mixin _$TransactionAssetResponse {
 abstract class $TransactionAssetResponseCopyWith<$Res> {
   factory $TransactionAssetResponseCopyWith(TransactionAssetResponse value,
           $Res Function(TransactionAssetResponse) then) =
-      _$TransactionAssetResponseCopyWithImpl<$Res>;
+      _$TransactionAssetResponseCopyWithImpl<$Res, TransactionAssetResponse>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'votes')
           List<String>? votes,
@@ -46,29 +47,32 @@ abstract class $TransactionAssetResponseCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TransactionAssetResponseCopyWithImpl<$Res>
+class _$TransactionAssetResponseCopyWithImpl<$Res,
+        $Val extends TransactionAssetResponse>
     implements $TransactionAssetResponseCopyWith<$Res> {
   _$TransactionAssetResponseCopyWithImpl(this._value, this._then);
 
-  final TransactionAssetResponse _value;
   // ignore: unused_field
-  final $Res Function(TransactionAssetResponse) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? votes = freezed,
     Object? payments = freezed,
   }) {
     return _then(_value.copyWith(
-      votes: votes == freezed
+      votes: freezed == votes
           ? _value.votes
           : votes // ignore: cast_nullable_to_non_nullable
               as List<String>?,
-      payments: payments == freezed
+      payments: freezed == payments
           ? _value.payments
           : payments // ignore: cast_nullable_to_non_nullable
               as List<TransactionAssetPaymentResponse>?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -80,6 +84,7 @@ abstract class _$$_TransactionAssetResponseCopyWith<$Res>
           $Res Function(_$_TransactionAssetResponse) then) =
       __$$_TransactionAssetResponseCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'votes')
           List<String>? votes,
@@ -89,27 +94,25 @@ abstract class _$$_TransactionAssetResponseCopyWith<$Res>
 
 /// @nodoc
 class __$$_TransactionAssetResponseCopyWithImpl<$Res>
-    extends _$TransactionAssetResponseCopyWithImpl<$Res>
+    extends _$TransactionAssetResponseCopyWithImpl<$Res,
+        _$_TransactionAssetResponse>
     implements _$$_TransactionAssetResponseCopyWith<$Res> {
   __$$_TransactionAssetResponseCopyWithImpl(_$_TransactionAssetResponse _value,
       $Res Function(_$_TransactionAssetResponse) _then)
-      : super(_value, (v) => _then(v as _$_TransactionAssetResponse));
+      : super(_value, _then);
 
-  @override
-  _$_TransactionAssetResponse get _value =>
-      super._value as _$_TransactionAssetResponse;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? votes = freezed,
     Object? payments = freezed,
   }) {
     return _then(_$_TransactionAssetResponse(
-      votes: votes == freezed
+      votes: freezed == votes
           ? _value._votes
           : votes // ignore: cast_nullable_to_non_nullable
               as List<String>?,
-      payments: payments == freezed
+      payments: freezed == payments
           ? _value._payments
           : payments // ignore: cast_nullable_to_non_nullable
               as List<TransactionAssetPaymentResponse>?,
@@ -137,6 +140,7 @@ class _$_TransactionAssetResponse implements _TransactionAssetResponse {
   List<String>? get votes {
     final value = _votes;
     if (value == null) return null;
+    if (_votes is EqualUnmodifiableListView) return _votes;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -147,6 +151,7 @@ class _$_TransactionAssetResponse implements _TransactionAssetResponse {
   List<TransactionAssetPaymentResponse>? get payments {
     final value = _payments;
     if (value == null) return null;
+    if (_payments is EqualUnmodifiableListView) return _payments;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -174,6 +179,7 @@ class _$_TransactionAssetResponse implements _TransactionAssetResponse {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_TransactionAssetResponseCopyWith<_$_TransactionAssetResponse>
       get copyWith => __$$_TransactionAssetResponseCopyWithImpl<
           _$_TransactionAssetResponse>(this, _$identity);

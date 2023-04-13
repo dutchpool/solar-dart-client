@@ -7,11 +7,14 @@ part 'object_response.g.dart';
 class ObjectResponse<T> {
   @JsonKey(name: "data")
   final T? data;
+  // @JsonKey(name: "meta")
+  // final MetaResponse? meta;
   final Map<String, dynamic>? errors;
   final String? error;
 
   const ObjectResponse({
     this.data,
+    // this.meta,
     this.errors,
     this.error,
   });

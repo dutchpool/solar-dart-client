@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'transaction_response.dart';
 
@@ -60,7 +60,8 @@ mixin _$TransactionResponse {
 abstract class $TransactionResponseCopyWith<$Res> {
   factory $TransactionResponseCopyWith(
           TransactionResponse value, $Res Function(TransactionResponse) then) =
-      _$TransactionResponseCopyWithImpl<$Res>;
+      _$TransactionResponseCopyWithImpl<$Res, TransactionResponse>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'id') String id,
       @JsonKey(name: 'blockId') String blockId,
@@ -82,23 +83,25 @@ abstract class $TransactionResponseCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TransactionResponseCopyWithImpl<$Res>
+class _$TransactionResponseCopyWithImpl<$Res, $Val extends TransactionResponse>
     implements $TransactionResponseCopyWith<$Res> {
   _$TransactionResponseCopyWithImpl(this._value, this._then);
 
-  final TransactionResponse _value;
   // ignore: unused_field
-  final $Res Function(TransactionResponse) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? blockId = freezed,
-    Object? version = freezed,
-    Object? type = freezed,
-    Object? typeGroup = freezed,
-    Object? amount = freezed,
-    Object? fee = freezed,
+    Object? id = null,
+    Object? blockId = null,
+    Object? version = null,
+    Object? type = null,
+    Object? typeGroup = null,
+    Object? amount = null,
+    Object? fee = null,
     Object? sender = freezed,
     Object? senderPublicKey = freezed,
     Object? recipient = freezed,
@@ -108,66 +111,67 @@ class _$TransactionResponseCopyWithImpl<$Res>
     Object? asset = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      blockId: blockId == freezed
+      blockId: null == blockId
           ? _value.blockId
           : blockId // ignore: cast_nullable_to_non_nullable
               as String,
-      version: version == freezed
+      version: null == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as int,
-      type: type == freezed
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as int,
-      typeGroup: typeGroup == freezed
+      typeGroup: null == typeGroup
           ? _value.typeGroup
           : typeGroup // ignore: cast_nullable_to_non_nullable
               as int,
-      amount: amount == freezed
+      amount: null == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
               as String,
-      fee: fee == freezed
+      fee: null == fee
           ? _value.fee
           : fee // ignore: cast_nullable_to_non_nullable
               as String,
-      sender: sender == freezed
+      sender: freezed == sender
           ? _value.sender
           : sender // ignore: cast_nullable_to_non_nullable
               as String?,
-      senderPublicKey: senderPublicKey == freezed
+      senderPublicKey: freezed == senderPublicKey
           ? _value.senderPublicKey
           : senderPublicKey // ignore: cast_nullable_to_non_nullable
               as String?,
-      recipient: recipient == freezed
+      recipient: freezed == recipient
           ? _value.recipient
           : recipient // ignore: cast_nullable_to_non_nullable
               as String?,
-      signature: signature == freezed
+      signature: freezed == signature
           ? _value.signature
           : signature // ignore: cast_nullable_to_non_nullable
               as String?,
-      nonce: nonce == freezed
+      nonce: freezed == nonce
           ? _value.nonce
           : nonce // ignore: cast_nullable_to_non_nullable
               as String?,
-      timestamp: timestamp == freezed
+      timestamp: freezed == timestamp
           ? _value.timestamp
           : timestamp // ignore: cast_nullable_to_non_nullable
               as TransactionTimestampResponse?,
-      asset: asset == freezed
+      asset: freezed == asset
           ? _value.asset
           : asset // ignore: cast_nullable_to_non_nullable
               as TransactionAssetResponse?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TransactionTimestampResponseCopyWith<$Res>? get timestamp {
     if (_value.timestamp == null) {
       return null;
@@ -175,18 +179,19 @@ class _$TransactionResponseCopyWithImpl<$Res>
 
     return $TransactionTimestampResponseCopyWith<$Res>(_value.timestamp!,
         (value) {
-      return _then(_value.copyWith(timestamp: value));
+      return _then(_value.copyWith(timestamp: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $TransactionAssetResponseCopyWith<$Res>? get asset {
     if (_value.asset == null) {
       return null;
     }
 
     return $TransactionAssetResponseCopyWith<$Res>(_value.asset!, (value) {
-      return _then(_value.copyWith(asset: value));
+      return _then(_value.copyWith(asset: value) as $Val);
     });
   }
 }
@@ -198,6 +203,7 @@ abstract class _$$_TransactionResponseCopyWith<$Res>
           $Res Function(_$_TransactionResponse) then) =
       __$$_TransactionResponseCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'id') String id,
       @JsonKey(name: 'blockId') String blockId,
@@ -222,24 +228,22 @@ abstract class _$$_TransactionResponseCopyWith<$Res>
 
 /// @nodoc
 class __$$_TransactionResponseCopyWithImpl<$Res>
-    extends _$TransactionResponseCopyWithImpl<$Res>
+    extends _$TransactionResponseCopyWithImpl<$Res, _$_TransactionResponse>
     implements _$$_TransactionResponseCopyWith<$Res> {
   __$$_TransactionResponseCopyWithImpl(_$_TransactionResponse _value,
       $Res Function(_$_TransactionResponse) _then)
-      : super(_value, (v) => _then(v as _$_TransactionResponse));
+      : super(_value, _then);
 
-  @override
-  _$_TransactionResponse get _value => super._value as _$_TransactionResponse;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? blockId = freezed,
-    Object? version = freezed,
-    Object? type = freezed,
-    Object? typeGroup = freezed,
-    Object? amount = freezed,
-    Object? fee = freezed,
+    Object? id = null,
+    Object? blockId = null,
+    Object? version = null,
+    Object? type = null,
+    Object? typeGroup = null,
+    Object? amount = null,
+    Object? fee = null,
     Object? sender = freezed,
     Object? senderPublicKey = freezed,
     Object? recipient = freezed,
@@ -249,59 +253,59 @@ class __$$_TransactionResponseCopyWithImpl<$Res>
     Object? asset = freezed,
   }) {
     return _then(_$_TransactionResponse(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      blockId: blockId == freezed
+      blockId: null == blockId
           ? _value.blockId
           : blockId // ignore: cast_nullable_to_non_nullable
               as String,
-      version: version == freezed
+      version: null == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as int,
-      type: type == freezed
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as int,
-      typeGroup: typeGroup == freezed
+      typeGroup: null == typeGroup
           ? _value.typeGroup
           : typeGroup // ignore: cast_nullable_to_non_nullable
               as int,
-      amount: amount == freezed
+      amount: null == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
               as String,
-      fee: fee == freezed
+      fee: null == fee
           ? _value.fee
           : fee // ignore: cast_nullable_to_non_nullable
               as String,
-      sender: sender == freezed
+      sender: freezed == sender
           ? _value.sender
           : sender // ignore: cast_nullable_to_non_nullable
               as String?,
-      senderPublicKey: senderPublicKey == freezed
+      senderPublicKey: freezed == senderPublicKey
           ? _value.senderPublicKey
           : senderPublicKey // ignore: cast_nullable_to_non_nullable
               as String?,
-      recipient: recipient == freezed
+      recipient: freezed == recipient
           ? _value.recipient
           : recipient // ignore: cast_nullable_to_non_nullable
               as String?,
-      signature: signature == freezed
+      signature: freezed == signature
           ? _value.signature
           : signature // ignore: cast_nullable_to_non_nullable
               as String?,
-      nonce: nonce == freezed
+      nonce: freezed == nonce
           ? _value.nonce
           : nonce // ignore: cast_nullable_to_non_nullable
               as String?,
-      timestamp: timestamp == freezed
+      timestamp: freezed == timestamp
           ? _value.timestamp
           : timestamp // ignore: cast_nullable_to_non_nullable
               as TransactionTimestampResponse?,
-      asset: asset == freezed
+      asset: freezed == asset
           ? _value.asset
           : asset // ignore: cast_nullable_to_non_nullable
               as TransactionAssetResponse?,
@@ -384,44 +388,49 @@ class _$_TransactionResponse implements _TransactionResponse {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_TransactionResponse &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.blockId, blockId) &&
-            const DeepCollectionEquality().equals(other.version, version) &&
-            const DeepCollectionEquality().equals(other.type, type) &&
-            const DeepCollectionEquality().equals(other.typeGroup, typeGroup) &&
-            const DeepCollectionEquality().equals(other.amount, amount) &&
-            const DeepCollectionEquality().equals(other.fee, fee) &&
-            const DeepCollectionEquality().equals(other.sender, sender) &&
-            const DeepCollectionEquality()
-                .equals(other.senderPublicKey, senderPublicKey) &&
-            const DeepCollectionEquality().equals(other.recipient, recipient) &&
-            const DeepCollectionEquality().equals(other.signature, signature) &&
-            const DeepCollectionEquality().equals(other.nonce, nonce) &&
-            const DeepCollectionEquality().equals(other.timestamp, timestamp) &&
-            const DeepCollectionEquality().equals(other.asset, asset));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.blockId, blockId) || other.blockId == blockId) &&
+            (identical(other.version, version) || other.version == version) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.typeGroup, typeGroup) ||
+                other.typeGroup == typeGroup) &&
+            (identical(other.amount, amount) || other.amount == amount) &&
+            (identical(other.fee, fee) || other.fee == fee) &&
+            (identical(other.sender, sender) || other.sender == sender) &&
+            (identical(other.senderPublicKey, senderPublicKey) ||
+                other.senderPublicKey == senderPublicKey) &&
+            (identical(other.recipient, recipient) ||
+                other.recipient == recipient) &&
+            (identical(other.signature, signature) ||
+                other.signature == signature) &&
+            (identical(other.nonce, nonce) || other.nonce == nonce) &&
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp) &&
+            (identical(other.asset, asset) || other.asset == asset));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(blockId),
-      const DeepCollectionEquality().hash(version),
-      const DeepCollectionEquality().hash(type),
-      const DeepCollectionEquality().hash(typeGroup),
-      const DeepCollectionEquality().hash(amount),
-      const DeepCollectionEquality().hash(fee),
-      const DeepCollectionEquality().hash(sender),
-      const DeepCollectionEquality().hash(senderPublicKey),
-      const DeepCollectionEquality().hash(recipient),
-      const DeepCollectionEquality().hash(signature),
-      const DeepCollectionEquality().hash(nonce),
-      const DeepCollectionEquality().hash(timestamp),
-      const DeepCollectionEquality().hash(asset));
+      id,
+      blockId,
+      version,
+      type,
+      typeGroup,
+      amount,
+      fee,
+      sender,
+      senderPublicKey,
+      recipient,
+      signature,
+      nonce,
+      timestamp,
+      asset);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_TransactionResponseCopyWith<_$_TransactionResponse> get copyWith =>
       __$$_TransactionResponseCopyWithImpl<_$_TransactionResponse>(
           this, _$identity);

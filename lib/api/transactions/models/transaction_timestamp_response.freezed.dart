@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'transaction_timestamp_response.dart';
 
@@ -39,7 +39,9 @@ abstract class $TransactionTimestampResponseCopyWith<$Res> {
   factory $TransactionTimestampResponseCopyWith(
           TransactionTimestampResponse value,
           $Res Function(TransactionTimestampResponse) then) =
-      _$TransactionTimestampResponseCopyWithImpl<$Res>;
+      _$TransactionTimestampResponseCopyWithImpl<$Res,
+          TransactionTimestampResponse>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'epoch') int epoch,
       @JsonKey(name: 'unix') int unix,
@@ -47,34 +49,37 @@ abstract class $TransactionTimestampResponseCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TransactionTimestampResponseCopyWithImpl<$Res>
+class _$TransactionTimestampResponseCopyWithImpl<$Res,
+        $Val extends TransactionTimestampResponse>
     implements $TransactionTimestampResponseCopyWith<$Res> {
   _$TransactionTimestampResponseCopyWithImpl(this._value, this._then);
 
-  final TransactionTimestampResponse _value;
   // ignore: unused_field
-  final $Res Function(TransactionTimestampResponse) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? epoch = freezed,
-    Object? unix = freezed,
-    Object? human = freezed,
+    Object? epoch = null,
+    Object? unix = null,
+    Object? human = null,
   }) {
     return _then(_value.copyWith(
-      epoch: epoch == freezed
+      epoch: null == epoch
           ? _value.epoch
           : epoch // ignore: cast_nullable_to_non_nullable
               as int,
-      unix: unix == freezed
+      unix: null == unix
           ? _value.unix
           : unix // ignore: cast_nullable_to_non_nullable
               as int,
-      human: human == freezed
+      human: null == human
           ? _value.human
           : human // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
@@ -86,6 +91,7 @@ abstract class _$$_TransactionTimestampResponseCopyWith<$Res>
           $Res Function(_$_TransactionTimestampResponse) then) =
       __$$_TransactionTimestampResponseCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'epoch') int epoch,
       @JsonKey(name: 'unix') int unix,
@@ -94,33 +100,31 @@ abstract class _$$_TransactionTimestampResponseCopyWith<$Res>
 
 /// @nodoc
 class __$$_TransactionTimestampResponseCopyWithImpl<$Res>
-    extends _$TransactionTimestampResponseCopyWithImpl<$Res>
+    extends _$TransactionTimestampResponseCopyWithImpl<$Res,
+        _$_TransactionTimestampResponse>
     implements _$$_TransactionTimestampResponseCopyWith<$Res> {
   __$$_TransactionTimestampResponseCopyWithImpl(
       _$_TransactionTimestampResponse _value,
       $Res Function(_$_TransactionTimestampResponse) _then)
-      : super(_value, (v) => _then(v as _$_TransactionTimestampResponse));
+      : super(_value, _then);
 
-  @override
-  _$_TransactionTimestampResponse get _value =>
-      super._value as _$_TransactionTimestampResponse;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? epoch = freezed,
-    Object? unix = freezed,
-    Object? human = freezed,
+    Object? epoch = null,
+    Object? unix = null,
+    Object? human = null,
   }) {
     return _then(_$_TransactionTimestampResponse(
-      epoch: epoch == freezed
+      epoch: null == epoch
           ? _value.epoch
           : epoch // ignore: cast_nullable_to_non_nullable
               as int,
-      unix: unix == freezed
+      unix: null == unix
           ? _value.unix
           : unix // ignore: cast_nullable_to_non_nullable
               as int,
-      human: human == freezed
+      human: null == human
           ? _value.human
           : human // ignore: cast_nullable_to_non_nullable
               as String,
@@ -159,21 +163,18 @@ class _$_TransactionTimestampResponse implements _TransactionTimestampResponse {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_TransactionTimestampResponse &&
-            const DeepCollectionEquality().equals(other.epoch, epoch) &&
-            const DeepCollectionEquality().equals(other.unix, unix) &&
-            const DeepCollectionEquality().equals(other.human, human));
+            (identical(other.epoch, epoch) || other.epoch == epoch) &&
+            (identical(other.unix, unix) || other.unix == unix) &&
+            (identical(other.human, human) || other.human == human));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(epoch),
-      const DeepCollectionEquality().hash(unix),
-      const DeepCollectionEquality().hash(human));
+  int get hashCode => Object.hash(runtimeType, epoch, unix, human);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_TransactionTimestampResponseCopyWith<_$_TransactionTimestampResponse>
       get copyWith => __$$_TransactionTimestampResponseCopyWithImpl<
           _$_TransactionTimestampResponse>(this, _$identity);

@@ -27,9 +27,9 @@ dev_dependencies:
   build_runner: # https://pub.dev/packages/build_runner
 
   # Data/Sealed classes and json serialization
-  freezed: ^2.0.3+1 # https://pub.dev/packages/freezed
+  freezed: ^2.1.0+1 # https://pub.dev/packages/freezed
   json_serializable: ^6.1.5 # https://pub.dev/packages/json_serializable
   json_annotation: ^4.5.0
 
   # Retrofit
-  retrofit_generator: 4.0.1 # https://pub.dev/packages/retrofit
+  retrofit_generator: ^4.0.2 # https://pub.dev/packages/retrofit_generator

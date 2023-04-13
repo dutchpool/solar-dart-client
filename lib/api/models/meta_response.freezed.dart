@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'meta_response.dart';
 
@@ -49,7 +49,8 @@ mixin _$MetaResponse {
 abstract class $MetaResponseCopyWith<$Res> {
   factory $MetaResponseCopyWith(
           MetaResponse value, $Res Function(MetaResponse) then) =
-      _$MetaResponseCopyWithImpl<$Res>;
+      _$MetaResponseCopyWithImpl<$Res, MetaResponse>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'totalCountIsEstimate') bool totalCountIsEstimate,
       @JsonKey(name: 'count') int count,
@@ -63,19 +64,22 @@ abstract class $MetaResponseCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$MetaResponseCopyWithImpl<$Res> implements $MetaResponseCopyWith<$Res> {
+class _$MetaResponseCopyWithImpl<$Res, $Val extends MetaResponse>
+    implements $MetaResponseCopyWith<$Res> {
   _$MetaResponseCopyWithImpl(this._value, this._then);
 
-  final MetaResponse _value;
   // ignore: unused_field
-  final $Res Function(MetaResponse) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? totalCountIsEstimate = freezed,
-    Object? count = freezed,
-    Object? pageCount = freezed,
-    Object? totalCount = freezed,
+    Object? totalCountIsEstimate = null,
+    Object? count = null,
+    Object? pageCount = null,
+    Object? totalCount = null,
     Object? next = freezed,
     Object? previous = freezed,
     Object? self = freezed,
@@ -83,43 +87,43 @@ class _$MetaResponseCopyWithImpl<$Res> implements $MetaResponseCopyWith<$Res> {
     Object? last = freezed,
   }) {
     return _then(_value.copyWith(
-      totalCountIsEstimate: totalCountIsEstimate == freezed
+      totalCountIsEstimate: null == totalCountIsEstimate
           ? _value.totalCountIsEstimate
           : totalCountIsEstimate // ignore: cast_nullable_to_non_nullable
               as bool,
-      count: count == freezed
+      count: null == count
           ? _value.count
           : count // ignore: cast_nullable_to_non_nullable
               as int,
-      pageCount: pageCount == freezed
+      pageCount: null == pageCount
           ? _value.pageCount
           : pageCount // ignore: cast_nullable_to_non_nullable
               as int,
-      totalCount: totalCount == freezed
+      totalCount: null == totalCount
           ? _value.totalCount
           : totalCount // ignore: cast_nullable_to_non_nullable
               as int,
-      next: next == freezed
+      next: freezed == next
           ? _value.next
           : next // ignore: cast_nullable_to_non_nullable
               as String?,
-      previous: previous == freezed
+      previous: freezed == previous
           ? _value.previous
           : previous // ignore: cast_nullable_to_non_nullable
               as String?,
-      self: self == freezed
+      self: freezed == self
           ? _value.self
           : self // ignore: cast_nullable_to_non_nullable
               as String?,
-      first: first == freezed
+      first: freezed == first
           ? _value.first
           : first // ignore: cast_nullable_to_non_nullable
               as String?,
-      last: last == freezed
+      last: freezed == last
           ? _value.last
           : last // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -130,6 +134,7 @@ abstract class _$$_MetaResponseCopyWith<$Res>
           _$_MetaResponse value, $Res Function(_$_MetaResponse) then) =
       __$$_MetaResponseCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'totalCountIsEstimate') bool totalCountIsEstimate,
       @JsonKey(name: 'count') int count,
@@ -144,21 +149,19 @@ abstract class _$$_MetaResponseCopyWith<$Res>
 
 /// @nodoc
 class __$$_MetaResponseCopyWithImpl<$Res>
-    extends _$MetaResponseCopyWithImpl<$Res>
+    extends _$MetaResponseCopyWithImpl<$Res, _$_MetaResponse>
     implements _$$_MetaResponseCopyWith<$Res> {
   __$$_MetaResponseCopyWithImpl(
       _$_MetaResponse _value, $Res Function(_$_MetaResponse) _then)
-      : super(_value, (v) => _then(v as _$_MetaResponse));
+      : super(_value, _then);
 
-  @override
-  _$_MetaResponse get _value => super._value as _$_MetaResponse;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? totalCountIsEstimate = freezed,
-    Object? count = freezed,
-    Object? pageCount = freezed,
-    Object? totalCount = freezed,
+    Object? totalCountIsEstimate = null,
+    Object? count = null,
+    Object? pageCount = null,
+    Object? totalCount = null,
     Object? next = freezed,
     Object? previous = freezed,
     Object? self = freezed,
@@ -166,39 +169,39 @@ class __$$_MetaResponseCopyWithImpl<$Res>
     Object? last = freezed,
   }) {
     return _then(_$_MetaResponse(
-      totalCountIsEstimate: totalCountIsEstimate == freezed
+      totalCountIsEstimate: null == totalCountIsEstimate
           ? _value.totalCountIsEstimate
           : totalCountIsEstimate // ignore: cast_nullable_to_non_nullable
               as bool,
-      count: count == freezed
+      count: null == count
           ? _value.count
           : count // ignore: cast_nullable_to_non_nullable
               as int,
-      pageCount: pageCount == freezed
+      pageCount: null == pageCount
           ? _value.pageCount
           : pageCount // ignore: cast_nullable_to_non_nullable
               as int,
-      totalCount: totalCount == freezed
+      totalCount: null == totalCount
           ? _value.totalCount
           : totalCount // ignore: cast_nullable_to_non_nullable
               as int,
-      next: next == freezed
+      next: freezed == next
           ? _value.next
           : next // ignore: cast_nullable_to_non_nullable
               as String?,
-      previous: previous == freezed
+      previous: freezed == previous
           ? _value.previous
           : previous // ignore: cast_nullable_to_non_nullable
               as String?,
-      self: self == freezed
+      self: freezed == self
           ? _value.self
           : self // ignore: cast_nullable_to_non_nullable
               as String?,
-      first: first == freezed
+      first: freezed == first
           ? _value.first
           : first // ignore: cast_nullable_to_non_nullable
               as String?,
-      last: last == freezed
+      last: freezed == last
           ? _value.last
           : last // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -271,35 +274,29 @@ class _$_MetaResponse extends _MetaResponse {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_MetaResponse &&
-            const DeepCollectionEquality()
-                .equals(other.totalCountIsEstimate, totalCountIsEstimate) &&
-            const DeepCollectionEquality().equals(other.count, count) &&
-            const DeepCollectionEquality().equals(other.pageCount, pageCount) &&
-            const DeepCollectionEquality()
-                .equals(other.totalCount, totalCount) &&
-            const DeepCollectionEquality().equals(other.next, next) &&
-            const DeepCollectionEquality().equals(other.previous, previous) &&
-            const DeepCollectionEquality().equals(other.self, self) &&
-            const DeepCollectionEquality().equals(other.first, first) &&
-            const DeepCollectionEquality().equals(other.last, last));
+            (identical(other.totalCountIsEstimate, totalCountIsEstimate) ||
+                other.totalCountIsEstimate == totalCountIsEstimate) &&
+            (identical(other.count, count) || other.count == count) &&
+            (identical(other.pageCount, pageCount) ||
+                other.pageCount == pageCount) &&
+            (identical(other.totalCount, totalCount) ||
+                other.totalCount == totalCount) &&
+            (identical(other.next, next) || other.next == next) &&
+            (identical(other.previous, previous) ||
+                other.previous == previous) &&
+            (identical(other.self, self) || other.self == self) &&
+            (identical(other.first, first) || other.first == first) &&
+            (identical(other.last, last) || other.last == last));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(totalCountIsEstimate),
-      const DeepCollectionEquality().hash(count),
-      const DeepCollectionEquality().hash(pageCount),
-      const DeepCollectionEquality().hash(totalCount),
-      const DeepCollectionEquality().hash(next),
-      const DeepCollectionEquality().hash(previous),
-      const DeepCollectionEquality().hash(self),
-      const DeepCollectionEquality().hash(first),
-      const DeepCollectionEquality().hash(last));
+  int get hashCode => Object.hash(runtimeType, totalCountIsEstimate, count,
+      pageCount, totalCount, next, previous, self, first, last);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_MetaResponseCopyWith<_$_MetaResponse> get copyWith =>
       __$$_MetaResponseCopyWithImpl<_$_MetaResponse>(this, _$identity);
 

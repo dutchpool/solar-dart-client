@@ -6,35 +6,50 @@ part of 'transactions_rest_client.dart';
 // RetrofitGenerator
 // **************************************************************************
 
-// ignore_for_file: unnecessary_brace_in_string_interps
+// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers
 
 class _TransactionsRestClient implements TransactionsRestClient {
-  _TransactionsRestClient(this._dio, {this.baseUrl});
+  _TransactionsRestClient(
+    this._dio, {
+    this.baseUrl,
+  });
 
   final Dio _dio;
 
   String? baseUrl;
 
   @override
-  Future<ListResponse<TransactionResponse>> getTransactions(
-      {page = 1, limit = 100, typeGroup, type, orderBy}) async {
+  Future<ListResponse<TransactionResponse>> getTransactions({
+    page = 1,
+    limit = 100,
+    typeGroup,
+    type,
+    orderBy,
+  }) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'page': page,
       r'limit': limit,
       r'typeGroup': typeGroup,
       r'type': type,
-      r'orderBy': orderBy
+      r'orderBy': orderBy,
     };
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<ListResponse<TransactionResponse>>(
-            Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, '/api/transactions',
-                    queryParameters: queryParameters, data: _data)
-                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+        _setStreamType<ListResponse<TransactionResponse>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/api/transactions',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = ListResponse<TransactionResponse>.fromJson(
       _result.data!,
       (json) => TransactionResponse.fromJson(json as Map<String, dynamic>),
@@ -51,11 +66,18 @@ class _TransactionsRestClient implements TransactionsRestClient {
     final _data = <String, dynamic>{};
     _data.addAll(broadcastTransactionsRequest.toJson());
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<ObjectResponse<BroadcastTransactionsResponse>>(
-            Options(method: 'POST', headers: _headers, extra: _extra)
-                .compose(_dio.options, '/api/transactions',
-                    queryParameters: queryParameters, data: _data)
-                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+        _setStreamType<ObjectResponse<BroadcastTransactionsResponse>>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/api/transactions',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = ObjectResponse<BroadcastTransactionsResponse>.fromJson(
       _result.data!,
       (json) =>

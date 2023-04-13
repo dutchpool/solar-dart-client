@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'wallet_voting_for_response.dart';
 
@@ -36,36 +36,40 @@ mixin _$WalletVotingForResponse {
 abstract class $WalletVotingForResponseCopyWith<$Res> {
   factory $WalletVotingForResponseCopyWith(WalletVotingForResponse value,
           $Res Function(WalletVotingForResponse) then) =
-      _$WalletVotingForResponseCopyWithImpl<$Res>;
+      _$WalletVotingForResponseCopyWithImpl<$Res, WalletVotingForResponse>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'percent') double percent,
       @JsonKey(name: 'votes') String votes});
 }
 
 /// @nodoc
-class _$WalletVotingForResponseCopyWithImpl<$Res>
+class _$WalletVotingForResponseCopyWithImpl<$Res,
+        $Val extends WalletVotingForResponse>
     implements $WalletVotingForResponseCopyWith<$Res> {
   _$WalletVotingForResponseCopyWithImpl(this._value, this._then);
 
-  final WalletVotingForResponse _value;
   // ignore: unused_field
-  final $Res Function(WalletVotingForResponse) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? percent = freezed,
-    Object? votes = freezed,
+    Object? percent = null,
+    Object? votes = null,
   }) {
     return _then(_value.copyWith(
-      percent: percent == freezed
+      percent: null == percent
           ? _value.percent
           : percent // ignore: cast_nullable_to_non_nullable
               as double,
-      votes: votes == freezed
+      votes: null == votes
           ? _value.votes
           : votes // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
@@ -76,6 +80,7 @@ abstract class _$$_WalletVotingForResponseCopyWith<$Res>
           $Res Function(_$_WalletVotingForResponse) then) =
       __$$_WalletVotingForResponseCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'percent') double percent,
       @JsonKey(name: 'votes') String votes});
@@ -83,27 +88,25 @@ abstract class _$$_WalletVotingForResponseCopyWith<$Res>
 
 /// @nodoc
 class __$$_WalletVotingForResponseCopyWithImpl<$Res>
-    extends _$WalletVotingForResponseCopyWithImpl<$Res>
+    extends _$WalletVotingForResponseCopyWithImpl<$Res,
+        _$_WalletVotingForResponse>
     implements _$$_WalletVotingForResponseCopyWith<$Res> {
   __$$_WalletVotingForResponseCopyWithImpl(_$_WalletVotingForResponse _value,
       $Res Function(_$_WalletVotingForResponse) _then)
-      : super(_value, (v) => _then(v as _$_WalletVotingForResponse));
+      : super(_value, _then);
 
-  @override
-  _$_WalletVotingForResponse get _value =>
-      super._value as _$_WalletVotingForResponse;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? percent = freezed,
-    Object? votes = freezed,
+    Object? percent = null,
+    Object? votes = null,
   }) {
     return _then(_$_WalletVotingForResponse(
-      percent: percent == freezed
+      percent: null == percent
           ? _value.percent
           : percent // ignore: cast_nullable_to_non_nullable
               as double,
-      votes: votes == freezed
+      votes: null == votes
           ? _value.votes
           : votes // ignore: cast_nullable_to_non_nullable
               as String,
@@ -139,19 +142,17 @@ class _$_WalletVotingForResponse extends _WalletVotingForResponse {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_WalletVotingForResponse &&
-            const DeepCollectionEquality().equals(other.percent, percent) &&
-            const DeepCollectionEquality().equals(other.votes, votes));
+            (identical(other.percent, percent) || other.percent == percent) &&
+            (identical(other.votes, votes) || other.votes == votes));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(percent),
-      const DeepCollectionEquality().hash(votes));
+  int get hashCode => Object.hash(runtimeType, percent, votes);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_WalletVotingForResponseCopyWith<_$_WalletVotingForResponse>
       get copyWith =>
           __$$_WalletVotingForResponseCopyWithImpl<_$_WalletVotingForResponse>(
