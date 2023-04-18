@@ -7,6 +7,7 @@ import 'package:dart_crypto/identities/address.dart';
 import 'package:dart_crypto/identities/public_key.dart';
 import 'package:dart_crypto/networks/mainnet.dart';
 import 'package:dart_crypto/networks/testnet.dart';
+import 'package:dart_crypto/transactions/transaction_assets/transfer_transaction_asset.dart';
 import 'package:dart_crypto/transactions/types/transfer.dart';
 import 'package:args/args.dart';
 import 'package:dart_crypto/transactions/types/vote.dart';
@@ -20,10 +21,8 @@ void main(List<String> arguments) async {
   try {
     ArgResults argResults = parser.parse(arguments);
     if (argResults.command?.name == "transfer") {
-      // int success = await handleTransferCommand(transferCommand, arguments);
-      stdout.writeln(
-          "Transfer transactions are currently not supported by dart-crypto, so dart-client can't handle those right now.");
-      exitCode = 1; //success;
+      int success = await handleTransferCommand(transferCommand, arguments);
+      exitCode = success;
     } else if (argResults.command?.name == "vote") {
       int success = await handleVoteCommand(voteCommand, arguments);
       exitCode = success;
@@ -174,12 +173,14 @@ Future<int> handleMultiVoteCommand(
     }
   }
   if (success) {
-    if (multiVoteArgs["network"] != "testnet" && multiVoteArgs["network"] != "mainnet") {
+    if (multiVoteArgs["network"] != "testnet" &&
+        multiVoteArgs["network"] != "mainnet") {
       success = false;
     }
   }
   if (success) {
-    final client = Client(baseUrl: multiVoteArgs["baseUrl"], isDevelopment: false);
+    final client =
+        Client(baseUrl: multiVoteArgs["baseUrl"], isDevelopment: false);
     final walletAddress = Address.fromPassphrase(
       multiVoteArgs["passphrase"],
       networkVersion: multiVoteArgs["network"] == "mainnet"
@@ -235,8 +236,12 @@ TransferTransaction createTransferTransaction({
   required String network,
 }) {
   final TransferTransaction transferTransaction = TransferTransaction(
-    address,
-    amount,
+    transfers: [
+      TransferTransactionAssetRecipientAmount(
+        recipientId: address,
+        amount: amount,
+      )
+    ],
     fee: fee,
   );
 
